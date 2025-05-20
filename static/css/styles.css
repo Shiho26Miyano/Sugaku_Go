@@ -1,0 +1,654 @@
+:root {
+    --primary-color: #ff85a2;
+    --secondary-color: #ffb1af;
+    --accent-color: #a0ddff;
+    --text-color: #343a40;
+    --text-secondary: #4a5568;
+    --text-accent: #2d3748;
+    --light-bg: #fff8f9;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --border-radius: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', 'Marker Felt', 'Arial Rounded MT Bold', sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+/* Mascots */
+.mascots {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    height: 100px;
+}
+
+/* Bear Character */
+.bear-character {
+    width: 90px;
+    height: 90px;
+    background-color: #a87c5b;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-right: 50px;
+    z-index: 1;
+}
+
+.bear-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.bear-ears {
+    position: absolute;
+    top: -15px;
+    width: 100%;
+}
+
+.bear-ears:before, .bear-ears:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #a87c5b;
+    border-radius: 50%;
+}
+
+.bear-ears:before {
+    left: 15px;
+}
+
+.bear-ears:after {
+    right: 15px;
+}
+
+.bear-eyes {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bear-eyes:before, .bear-eyes:after {
+    content: '';
+    width: 10px;
+    height: 12px;
+    background-color: #222;
+    border-radius: 50%;
+}
+
+.bear-nose {
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 12px;
+    background-color: #333;
+    border-radius: 50%;
+}
+
+.bear-mouth {
+    position: absolute;
+    top: 63px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 10px;
+    border-radius: 0 0 10px 10px;
+    border-bottom: 3px solid #333;
+}
+
+/* Duck Character */
+.duck-character {
+    width: 80px;
+    height: 80px;
+    background-color: #f9dc5c;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 0;
+}
+
+.duck-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.duck-bill {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 15px;
+    background-color: #ff9a3c;
+    border-radius: 10px;
+}
+
+.duck-eyes {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.duck-eyes:before, .duck-eyes:after {
+    content: '';
+    width: 8px;
+    height: 10px;
+    background-color: #222;
+    border-radius: 50%;
+}
+
+/* Kawaii Character */
+.character {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.kawaii-character {
+    width: 80px;
+    height: 80px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: bounce 2s infinite;
+}
+
+.face {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    width: 40px;
+    height: 20px;
+}
+
+.eyes {
+    display: flex;
+    justify-content: space-between;
+    width: 40px;
+}
+
+.eyes::before, .eyes::after {
+    content: '';
+    width: 8px;
+    height: 10px;
+    background-color: #333;
+    border-radius: 50%;
+    position: relative;
+}
+
+.mouth {
+    width: 16px;
+    height: 8px;
+    border-radius: 0 0 10px 10px;
+    background-color: #333;
+    margin: 5px auto 0;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Form Styles */
+.add-milestone {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-accent);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: var(--text-color);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+    box-shadow: 0 3px 10px rgba(255, 133, 162, 0.3);
+    flex: 1;
+}
+
+.btn:hover {
+    background-color: #ff6b8e;
+    transform: translateY(-2px);
+}
+
+.btn-surprise {
+    background-color: #7bed9f;
+    box-shadow: 0 3px 10px rgba(123, 237, 159, 0.3);
+}
+
+.btn-surprise:hover {
+    background-color: #2ed573;
+}
+
+.btn-small {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 8px rgba(255, 177, 175, 0.3);
+}
+
+.btn-small:hover {
+    background-color: var(--primary-color);
+}
+
+/* Calendar Styles */
+.calendar-section {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-container {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--secondary-color);
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: minmax(60px, auto);
+    background-color: white;
+}
+
+.calendar-day {
+    border: 1px solid #eee;
+    padding: 5px;
+    text-align: right;
+    position: relative;
+    min-height: 60px;
+    color: var(--text-secondary);
+}
+
+.calendar-day.inactive {
+    background-color: #f8f8f8;
+    color: #ccc;
+}
+
+.calendar-day.today {
+    background-color: #fff4f6;
+    font-weight: bold;
+    color: var(--text-accent);
+}
+
+.calendar-day-number {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.calendar-event {
+    position: relative;
+    padding: 3px 5px;
+    margin: 2px 0;
+    border-radius: 3px;
+    font-size: 0.65rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    color: white;
+    cursor: pointer;
+}
+
+.calendar-event.birthday {
+    background-color: #ff85a2;
+}
+
+.calendar-event.travel {
+    background-color: #54a0ff;
+}
+
+.calendar-event.graduation {
+    background-color: #5f27cd;
+}
+
+.calendar-event.anniversary {
+    background-color: #ff6b6b;
+}
+
+.calendar-event.work {
+    background-color: #576574;
+}
+
+.calendar-event.special {
+    background-color: #feca57;
+}
+
+/* Milestone Cards */
+.milestones {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.milestone-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.milestone-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 15px;
+    position: relative;
+    transition: transform 0.3s;
+    border: 2px solid var(--secondary-color);
+}
+
+.milestone-card:hover {
+    transform: translateY(-5px);
+}
+
+.milestone-icon {
+    background-color: var(--accent-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.milestone-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.milestone-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--text-accent);
+}
+
+.milestone-description {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.milestone-date {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.countdown {
+    font-weight: bold;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.days-left {
+    font-size: 1.1rem;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.delete-btn:hover {
+    color: #ff4757;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    max-width: 500px;
+    position: relative;
+    animation: modalAppear 0.5s ease;
+}
+
+@keyframes modalAppear {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: var(--text-color);
+}
+
+.love-message {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.love-message h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.love-message p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-top: 15px;
+}
+
+.hearts {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.hearts i {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+.hearts i:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.hearts i:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .character {
+        margin-top: 20px;
+    }
+    
+    .milestone-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .calendar-day {
+        min-height: 50px;
+    }
+    
+    .calendar-event {
+        font-size: 0.6rem;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .mascots {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 20px;
+    }
+    
+    .bear-character {
+        margin-right: 0;
+    }
+} 
