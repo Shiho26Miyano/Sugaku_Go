@@ -77,6 +77,11 @@ def delete_milestone(milestone_id):
     return jsonify({"message": "Milestone deleted"}), 200
 
 if __name__ == '__main__':
-    # Make sure the app is accessible from external devices on the network
-    # Use port 5001 instead of 5000 which might be blocked
-    app.run(debug=True, host='0.0.0.0', port=5001) 
+    # Get port from environment variable for Railway deployment
+    port = int(os.environ.get('PORT', 5001))
+    
+    # In production, don't use debug mode
+    debug_mode = os.environ.get('FLASK_ENV', 'development') == 'development'
+    
+    # Make sure the app is accessible from all devices
+    app.run(debug=debug_mode, host='0.0.0.0', port=port) 
